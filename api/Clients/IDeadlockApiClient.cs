@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Clients
+namespace api.Clients
 {
     public interface IDeadlockApiClient
     {
-        
+
     }
 }
