@@ -2,11 +2,28 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using api.DTOs;
 
 namespace api.Clients
 {
-    public class DeadlockApiClient
+    public class DeadlockApiClient : IDeadlockApiClient
     {
+        private readonly HttpClient _httpClient;
 
+        public DeadlockApiClient(HttpClient httpClient)
+        {
+            _httpClient = httpClient;
+        }
+
+        public async Task<List<HeroDto>> GetHeroesAsync(CancellationToken cancellationToken = default)
+        {
+            const string endpoint = "/v1/assets/heroes?only_active=true"; // only active returns the heroes that are currently available to play in the live game. 
+
+            var heroes = await _httpClient.GetFromJsonAsync<List<HeroDto>>( // Send GET request -> Check response -> Read response body -> Deserialize JSON into List<HeroDto>
+                endpoint,
+                cancellationToken);
+
+            return heroes ?? new List<HeroDto>(); // if heroes is null then return an empty list of hero data specified by the heroDTO.
+        }
     }
 }
