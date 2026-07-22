@@ -16,7 +16,7 @@ namespace api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class HeroController : ControllerBase
+    public class HeroesController : ControllerBase
     {
 
     }

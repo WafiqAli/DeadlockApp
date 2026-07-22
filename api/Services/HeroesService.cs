@@ -8,11 +8,11 @@ using api.Services.Interfaces;
 
 namespace api.Services
 {
-    public class HeroService : IHeroService
+    public class HeroesService : IHeroesService
     {
         private readonly IDeadlockApiClient _deadlockApiClient;
 
-        public HeroService(IDeadlockApiClient deadlockApiClient)
+        public HeroesService(IDeadlockApiClient deadlockApiClient)
         {
             _deadlockApiClient = deadlockApiClient;
         }
