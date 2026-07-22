@@ -12,5 +12,8 @@ namespace api.DTOs
 
         public string Name { get; set; } = string.Empty;
         public HeroDescriptionDto Description { get; set; } = new();
+
+        [JsonPropertyName("images")]
+        public HeroImagesDto Images { get; set; } = new();
     }
 }
