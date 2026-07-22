@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using api.DTOs;
+using api.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -15,9 +17,22 @@ using Microsoft.AspNetCore.Mvc;
 namespace api.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/heroes")]
     public class HeroesController : ControllerBase
     {
+        private readonly IHeroesService _heroService;
 
+        public HeroesController(IHeroesService heroesService)
+        {
+            _heroService = heroesService;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IReadOnlyList<HeroDto>>> GetHeroes(CancellationToken cancellationToken = default)
+        {
+            var heroes = await _heroService.GetHeroesAsync(cancellationToken);
+
+            return Ok(heroes);
+        }
     }
 }
