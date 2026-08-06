@@ -2,7 +2,7 @@ import { Sun } from "lucide-react";
 
 const Navbar = () => {
   return (
-    <div>
+    <nav className="navbar">
       <h1>Deadlock</h1>
       <ul>
         <li>Home</li>
@@ -14,7 +14,7 @@ const Navbar = () => {
         </button>
         <button>Sign in</button>
       </ul>
-    </div>
+    </nav>
   );
 };
 
