@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navbar: #f7f2e8;
+  --color-main-background: #e9e4d9;
+  --color-input-background: #fffdf7;
+
+  --color-border: #c9c0af;
+
+  --color-primary-dark: #242522;
+  --color-common-text: #666b65;
+  --color-gold-accent: #8c6a2b;
+
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer components {
+  .input-light {
+    @apply bg-input-background rounded-md border border-border;
+  }
+
+  .button-light {
+    @apply rounded-md border border-border;
+  }
+}
