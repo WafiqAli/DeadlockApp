@@ -12,6 +12,7 @@
   --color-gold-accent: #8c6a2b;
 
   --font-sans: "Inter", sans-serif;
+  --font-display: "Barlow Condensed", sans-serif;
 }
 
 @layer components {
