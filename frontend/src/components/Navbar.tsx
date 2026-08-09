@@ -1,5 +1,6 @@
 import { Moon } from "lucide-react";
 import Searchbar from "./Searchbar";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -9,9 +10,15 @@ const Navbar = () => {
           DEADLOCK.<span className="text-gold-accent">GG</span>
         </h1>
         <ul className="flex gap-8 text-common-text items-center">
-          <li>Home</li>
-          <li>Heroes</li>
-          <li>Items</li>
+          <Link to="/">
+            <li>Home</li>
+          </Link>
+          <Link to="heroes">
+            <li>Heroes</li>
+          </Link>
+          <Link to="items">
+            <li>Items</li>
+          </Link>
         </ul>
       </div>
       <div className="flex items-center gap-8 text-common-text">
