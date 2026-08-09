@@ -4,6 +4,8 @@ using api.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var MyFrontendOrigins = "_myFrontendOrigins";
+
 // Add services to the container.
 builder.Services.AddScoped<IHeroesService, HeroesService>();
 
@@ -12,6 +14,18 @@ builder.Services.AddHttpClient<IDeadlockApiClient, DeadlockApiClient>(
     {
         httpClient.BaseAddress = new Uri("https://api.deadlock-api.com/");
     });
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyFrontendOrigins,
+    policy =>
+    {
+        policy.WithOrigins("http://localhost:5173")
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+    });
+});
+
 
 builder.Services.AddControllers();
 
@@ -27,6 +41,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(MyFrontendOrigins);
 
 app.UseAuthorization();
 
