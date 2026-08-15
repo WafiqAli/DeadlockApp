@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using api.DTOs;
 
-namespace api.Services.Interfaces
+namespace api.Services
 {
     public interface IHeroesService
     {
