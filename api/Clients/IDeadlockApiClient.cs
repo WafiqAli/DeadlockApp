@@ -9,5 +9,7 @@ namespace api.Clients
     public interface IDeadlockApiClient
     {
         Task<List<HeroDto>> GetHeroesAsync(CancellationToken cancellationToken = default);
+
+        Task<List<ItemsDto>> GetItemsAsync(CancellationToken cancellationToken = default);
     }
 }

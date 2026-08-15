@@ -4,7 +4,11 @@ namespace api.DTOs
 {
     public class ItemsDto
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
+
+        [JsonPropertyName("class_name")]
+        public string ClassName { get; set; } = string.Empty;
+
         public string Name { get; set; } = string.Empty;
 
         public string Type { get; set; } = string.Empty;

@@ -1,6 +1,5 @@
 using api.Clients;
 using api.Services;
-using api.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +7,7 @@ var MyFrontendOrigins = "_myFrontendOrigins";
 
 // Add services to the container.
 builder.Services.AddScoped<IHeroesService, HeroesService>();
+builder.Services.AddScoped<IItemsService, ItemsService>();
 
 builder.Services.AddHttpClient<IDeadlockApiClient, DeadlockApiClient>(
     httpClient =>
