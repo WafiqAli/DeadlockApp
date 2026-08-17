@@ -9,11 +9,15 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/heroes" element={<Heroes />} />
-        <Route path="/items" element={<Items />} />
-      </Routes>
+      <main className="flex flex-col items-center bg-main-background">
+        <div className="w-full max-w-7xl px-8">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/heroes" element={<Heroes />} />
+            <Route path="/items" element={<Items />} />
+          </Routes>
+        </div>
+      </main>
     </BrowserRouter>
   );
 }

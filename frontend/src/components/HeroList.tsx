@@ -3,14 +3,19 @@ import HeroCard from "./HeroCard";
 
 type HeroListProps = {
   heroesData: Hero[];
+  searchQuery?: string;
 };
 
-const HeroList = ({ heroesData }: HeroListProps) => {
+const HeroList = ({ heroesData, searchQuery }: HeroListProps) => {
   return (
-    <div className="flex flex-wrap justify-center">
-      {heroesData.map((hero, index) => (
-        <HeroCard key={index} hero={hero} />
-      ))}
+    <div className="grid grid-cols-[repeat(auto-fill,minmax(120px,1fr))] gap-2">
+      {searchQuery
+        ? heroesData
+            .filter((hero) =>
+              hero.name.toLowerCase().includes(searchQuery.toLowerCase()),
+            )
+            .map((hero, index) => <HeroCard key={index} hero={hero} />)
+        : heroesData.map((hero, index) => <HeroCard key={index} hero={hero} />)}
     </div>
   );
 };

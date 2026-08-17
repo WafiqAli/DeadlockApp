@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between border border-border h-20 px-8 bg-navbar font-medium">
+    <nav className="flex items-center justify-between border border-border h-20 px-8  bg-navbar font-medium">
       <div className="flex gap-8">
         <h1 className="text-2xl font-display font-bold text-primary-dark">
           DEADLOCK.<span className="text-gold-accent">GG</span>
