@@ -27,6 +27,18 @@ namespace api.Clients
             return heroesResponse ?? new List<HeroDto>(); // if heroes is null then return an empty list of hero data specified by the heroDTO.
         }
 
+        public async Task<List<HeroAbilityDto>> GetHeroesAbilitiesAsync(CancellationToken cancellationToken = default)
+        {
+            const string endpoint = "/v1/assets/items/by-type/ability"; // only active returns the heroes that are currently available to play in the live game. 
+
+            var abilitiesResponse = await _httpClient.GetFromJsonAsync<List<HeroAbilityDto>>( // Send GET request -> Check response -> Read response body -> Deserialize JSON into List<HeroDto>
+                endpoint,
+                cancellationToken
+            );
+
+            return abilitiesResponse ?? new List<HeroAbilityDto>(); // if heroes is null then return an empty list of hero data specified by the heroDTO.
+        }
+
         public async Task<List<ItemsDto>> GetItemsAsync(CancellationToken cancellationToken = default)
         {
             const string endpoint = "/v1/assets/items";

@@ -12,5 +12,7 @@ namespace api.Services
            This service should pass back the data it retrived from the client to the controller without needing to change anything. 
         */
         Task<IReadOnlyList<HeroDto>> GetHeroesAsync(CancellationToken cancellationToken = default);
+        Task<IReadOnlyList<HeroAbilityDto>> GetHeroesAbilitiesAsync(CancellationToken cancellationToken = default);
+
     }
 }

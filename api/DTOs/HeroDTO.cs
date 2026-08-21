@@ -13,15 +13,34 @@ namespace api.DTOs
         public string Name { get; set; } = string.Empty;
         public HeroDescriptionDto Description { get; set; } = new();
 
+        [JsonPropertyName("hero_type")]
+        public string HeroType { get; set; } = string.Empty;
+
+        public List<string> Tags { get; set; } = [];
+
         [JsonPropertyName("images")]
         public HeroImagesDto Images { get; set; } = new();
 
-        public HeroColorsDTO colors { get; set; } = new();
+        [JsonPropertyName("items")]
+        public HeroItemsDto HeroItems { get; set; } = new();
+
+        public List<HeroAbilityDto> HeroAbilities { get; set; } = new();
+
+        public HeroColorsDto colors { get; set; } = new();
     }
 
-    public class HeroColorsDTO
+    public class HeroColorsDto
     {
         [JsonPropertyName("style_hex")]
         public string StyleHex { get; set; } = string.Empty;
     }
+
+    public class HeroItemsDto
+    {
+        public string Signature1 { get; set; } = string.Empty;
+        public string Signature2 { get; set; } = string.Empty;
+        public string Signature3 { get; set; } = string.Empty;
+        public string Signature4 { get; set; } = string.Empty;
+    }
+
 }

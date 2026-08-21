@@ -11,5 +11,6 @@ namespace api.Clients
         Task<List<HeroDto>> GetHeroesAsync(CancellationToken cancellationToken = default);
 
         Task<List<ItemsDto>> GetItemsAsync(CancellationToken cancellationToken = default);
+        Task<List<HeroAbilityDto>> GetHeroesAbilitiesAsync(CancellationToken cancellationToken = default);
     }
 }
