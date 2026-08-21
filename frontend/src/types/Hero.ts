@@ -4,6 +4,7 @@ export interface Hero {
   name: string;
   description: HeroDescription;
   images: HeroImages;
+  colors: HeroColors;
 }
 
 export interface HeroDescription {
@@ -15,4 +16,9 @@ export interface HeroDescription {
 export interface HeroImages {
   icon_hero_card: string;
   icon_hero_small: string;
+  name_image: string;
+}
+
+export interface HeroColors {
+  style_hex: string;
 }

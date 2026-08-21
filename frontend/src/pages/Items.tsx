@@ -40,7 +40,7 @@ const Items = () => {
       <ItemList itemsData={itemsData} searchQuery={searchQuery} />
     </div>
   ) : (
-    <div></div>
+    <div>Loading</div>
   );
 };
 

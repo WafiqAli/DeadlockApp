@@ -15,7 +15,7 @@ const Heroes = () => {
     getHeroesData();
   }, []);
   console.log(heroesData);
-  return (
+  return heroesData ? (
     <div className="bg-main-background min-h-screen">
       <div className="flex flex-col gap-4 pb-8">
         <hr className="border-0 h-px bg-linear-to-r from-gold-accent to-transparent mt-10"></hr>
@@ -38,6 +38,8 @@ const Heroes = () => {
       </div>
       <HeroList heroesData={heroesData} searchQuery={searchQuery} />
     </div>
+  ) : (
+    <div>Loading</div>
   );
 };
 

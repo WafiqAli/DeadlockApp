@@ -15,5 +15,13 @@ namespace api.DTOs
 
         [JsonPropertyName("images")]
         public HeroImagesDto Images { get; set; } = new();
+
+        public HeroColorsDTO colors { get; set; } = new();
+    }
+
+    public class HeroColorsDTO
+    {
+        [JsonPropertyName("style_hex")]
+        public string StyleHex { get; set; } = string.Empty;
     }
 }

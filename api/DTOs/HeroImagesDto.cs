@@ -14,5 +14,8 @@ namespace api.DTOs
 
         [JsonPropertyName("icon_image_small")]
         public string IconImageSmall { get; set; } = string.Empty;
+
+        [JsonPropertyName("name_image")]
+        public string NameImage { get; set; } = string.Empty;
     }
 }
