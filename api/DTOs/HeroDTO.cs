@@ -24,6 +24,7 @@ namespace api.DTOs
         [JsonPropertyName("items")]
         public HeroItemsDto HeroItems { get; set; } = new();
 
+        [JsonPropertyName("hero_abilites")]
         public List<HeroAbilityDto> HeroAbilities { get; set; } = new();
 
         public HeroColorsDto colors { get; set; } = new();

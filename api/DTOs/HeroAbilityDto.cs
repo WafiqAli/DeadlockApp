@@ -1,4 +1,5 @@
 using System.Reflection;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace api.DTOs;
@@ -17,6 +18,8 @@ public class HeroAbilityDto
 
     public HeroAbilityDescriptionDto Description { get; set; } = new();
 
+    public HeroPropertiesDto properties { get; set; } = new();
+
     public string Image { get; set; } = string.Empty;
 }
 
@@ -30,22 +33,28 @@ public class HeroAbilityDescriptionDto
 public class HeroPropertiesDto
 {
     public HeroAbilityCooldownDto AbilityCooldown { get; set; } = new();
-    public HeroAbilityCooldownDto AbilityDuration { get; set; } = new();
-    public HeroAbilityCooldownDto AbilityCastRange { get; set; } = new();
+
+    public HeroAbilityDurationDto AbilityDuration { get; set; } = new();
+
+    public HeroAbilityCastRangeDto AbilityCastRange { get; set; } = new();
 }
 
 public class HeroAbilityCooldownDto
 {
-    public string Value { get; set; } = string.Empty;
+    [JsonPropertyName("value")]
+    public JsonElement Value { get; set; }
 
 }
 
 public class HeroAbilityDurationDto
 {
-    public string Value { get; set; } = string.Empty;
+    [JsonPropertyName("value")]
+    public JsonElement Value { get; set; }
+
 }
 
 public class HeroAbilityCastRangeDto
 {
-    public string Value { get; set; } = string.Empty;
+    [JsonPropertyName("value")]
+    public JsonElement Value { get; set; }
 }
