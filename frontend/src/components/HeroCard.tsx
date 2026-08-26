@@ -2,11 +2,21 @@ import type { Hero } from "../types/Hero";
 
 type HeroCardProps = {
   hero: Hero;
+  onHeroSelect?: (hero: Hero) => void;
 };
 
-const HeroCard = ({ hero }: HeroCardProps) => {
+const HeroCard = ({ hero, onHeroSelect }: HeroCardProps) => {
+  const onCardClick = () => {
+    if (onHeroSelect) {
+      onHeroSelect(hero);
+    }
+  };
+
   return (
-    <div className="relative overflow-hidden  border border-border bg-neutral-900">
+    <div
+      className="relative overflow-hidden  border border-border bg-neutral-900"
+      onClick={onCardClick}
+    >
       {/* Subtle hero colour behind the portrait */}
       <div
         className="absolute inset-0 opacity-20"

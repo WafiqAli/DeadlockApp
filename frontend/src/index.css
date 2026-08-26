@@ -10,6 +10,7 @@
   --color-primary-dark: #242522;
   --color-common-text: #666b65;
   --color-gold-accent: #8c6a2b;
+  --color-offwhite: #F2F2F2;
 
   --font-sans: "Inter", sans-serif;
   --font-display: "Barlow Condensed", sans-serif;
@@ -22,5 +23,9 @@
 
   .button-light {
     @apply rounded-md border border-border;
+  }
+
+  .heading-light {
+    @apply font-display font-bold text-primary-dark uppercase
   }
 }

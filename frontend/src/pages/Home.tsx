@@ -3,7 +3,7 @@ import Searchbar from "../components/Searchbar";
 const Home = () => {
   return (
     <div className="flex flex-col justify-center items-center min-h-screen bg-main-background">
-      <h1 className="text-6xl font-bold uppercase font-display">
+      <h1 className="heading-light text-6xl">
         <span className="block text-primary-dark">Find a Deadlock</span>
         <span className="block text-gold-accent text-center">Player</span>
       </h1>

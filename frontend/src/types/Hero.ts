@@ -7,7 +7,7 @@ export interface Hero {
   tags: string[];
   images: HeroImages;
   items: HeroItems;
-  hero_abilities: HeroAbilities;
+  hero_abilities: HeroAbility[];
   colors: HeroColors;
 }
 
@@ -17,7 +17,7 @@ export interface HeroDescription {
   playstyle: string;
 }
 
-export interface HeroAbilities {
+export interface HeroAbility {
   id: number;
   hero: number;
   class_name: string;

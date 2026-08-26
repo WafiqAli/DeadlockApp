@@ -21,9 +21,7 @@ const Items = () => {
       <div className="flex flex-col gap-4 pb-8">
         <hr className="border-0 h-px bg-linear-to-r from-gold-accent to-transparent mt-10"></hr>
         <div className="mb-8">
-          <h1 className="text-4xl font-bold uppercase font-display mb-2">
-            ITEMS
-          </h1>
+          <h1 className="heading-light text-5xl mb-2">ITEMS</h1>
           <p className="text-common-text">
             There are currently {itemsData.length} items in Deadlock. Tier 5
             items are only available in the Street Brawl game mode.
