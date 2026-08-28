@@ -8,19 +8,22 @@ type HeroListProps = {
 };
 
 const HeroList = ({ heroesData, searchQuery, onHeroSelect }: HeroListProps) => {
+  const filteredHeroes = searchQuery
+    ? heroesData.filter((hero) =>
+        hero.name.toLowerCase().includes(searchQuery.toLowerCase()),
+      )
+    : heroesData;
+
   return (
     <div className="grid grid-cols-[repeat(auto-fill,minmax(120px,1fr))] gap-2">
-      {searchQuery
-        ? heroesData
-            .filter((hero) =>
-              hero.name.toLowerCase().includes(searchQuery.toLowerCase()),
-            )
-            .map((hero, index) => (
-              <HeroCard key={index} hero={hero} onHeroSelect={onHeroSelect} />
-            ))
-        : heroesData.map((hero, index) => (
-            <HeroCard key={index} hero={hero} onHeroSelect={onHeroSelect} />
-          ))}
+      {filteredHeroes.map((hero) => (
+        <HeroCard
+          key={hero.id}
+          hero={hero}
+          onHeroSelect={onHeroSelect}
+          className="w-full"
+        />
+      ))}
     </div>
   );
 };

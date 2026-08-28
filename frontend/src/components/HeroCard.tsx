@@ -3,9 +3,10 @@ import type { Hero } from "../types/Hero";
 type HeroCardProps = {
   hero: Hero;
   onHeroSelect?: (hero: Hero) => void;
+  className?: string;
 };
 
-const HeroCard = ({ hero, onHeroSelect }: HeroCardProps) => {
+const HeroCard = ({ hero, onHeroSelect, className = "" }: HeroCardProps) => {
   const onCardClick = () => {
     if (onHeroSelect) {
       onHeroSelect(hero);
@@ -14,7 +15,15 @@ const HeroCard = ({ hero, onHeroSelect }: HeroCardProps) => {
 
   return (
     <div
-      className="relative overflow-hidden  border border-border bg-neutral-900"
+      className={`
+        relative 
+        aspect-3/4
+        shrink-0 
+        overflow-hidden 
+        border 
+        border-border 
+        bg-neutral-900 
+        ${className}`}
       onClick={onCardClick}
     >
       {/* Subtle hero colour behind the portrait */}
@@ -32,7 +41,7 @@ const HeroCard = ({ hero, onHeroSelect }: HeroCardProps) => {
       <img
         src={hero.images.icon_hero_card}
         alt={hero.name}
-        className="relative z-10 w-60"
+        className="relative z-10 h-full w-full object-cover"
       />
 
       <img

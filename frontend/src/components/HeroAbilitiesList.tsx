@@ -18,14 +18,14 @@ const HeroAbilitiesList = ({
   };
 
   return (
-    <div className="flex justify-center gap-8">
+    <div className="flex justify-center gap-8 pb-4">
       {heroAbilities.map((ability, index) => {
         const isActive = selectedAbility.class_name === ability.class_name;
 
         return (
           <div key={index} onClick={() => handleAbilityClick(ability)}>
             <div
-              className={`size-30 rounded-full flex justify-center items-center ${
+              className={`size-30 border border-border rounded-full flex justify-center items-center ${
                 isActive ? "bg-black/85" : "bg-offwhite"
               }`}
             >

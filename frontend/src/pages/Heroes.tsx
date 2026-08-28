@@ -4,6 +4,7 @@ import type { Hero } from "../types/Hero";
 import HeroList from "../components/HeroList";
 import Searchbar from "../components/Searchbar";
 import HeroDetailsModal from "../components/HeroDetailsModal";
+import GoldHorizontalLine from "../components/common/GoldHorizontalLine";
 
 const Heroes = () => {
   const [heroesData, setHeroesData] = useState<Hero[]>([]);
@@ -21,7 +22,7 @@ const Heroes = () => {
   return heroesData ? (
     <div className="bg-main-background min-h-screen">
       <div className="flex flex-col gap-4 pb-8">
-        <hr className="border-0 h-px bg-linear-to-r from-gold-accent to-transparent mt-10"></hr>
+        <GoldHorizontalLine className="mt-10" />
         <div className="mb-8">
           <h1 className="text-5xl heading-light mb-2">Heroes</h1>
           <p className="text-common-text">
