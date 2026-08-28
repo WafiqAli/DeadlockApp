@@ -46,13 +46,8 @@ const HeroDetailsModal = ({ hero, onClose }: HeroDetailsModalProps) => {
       backdrop:backdrop-blur-sm"
     >
       <div className="flex border-b border-border ">
-        {/* <img
-          className="w-50"
-          src={hero.images.icon_hero_card}
-          alt={hero.class_name}
-        /> */}
-        <HeroCard hero={hero} className="w-52 border-0" />
-        <div className="flex-1 px-6 py-4">
+        <HeroCard hero={hero} gloat={true} className="w-52 border-0" />
+        <div className="relative flex-1 px-6 py-4">
           <h1 className="heading-light text-4xl py-2">{hero.name}</h1>
           <div className="text-primary-dark flex gap-2 pb-4">
             {hero.tags.map((tag) => {

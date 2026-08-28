@@ -12,6 +12,9 @@ namespace api.DTOs
         [JsonPropertyName("icon_hero_card")]
         public string IconHeroCard { get; set; } = string.Empty;
 
+        [JsonPropertyName("hero_card_gloat")]
+        public string HeroCardGloat { get; set; } = string.Empty;
+
         [JsonPropertyName("icon_image_small")]
         public string IconImageSmall { get; set; } = string.Empty;
 

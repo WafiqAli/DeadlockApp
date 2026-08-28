@@ -3,10 +3,16 @@ import type { Hero } from "../types/Hero";
 type HeroCardProps = {
   hero: Hero;
   onHeroSelect?: (hero: Hero) => void;
+  gloat?: boolean;
   className?: string;
 };
 
-const HeroCard = ({ hero, onHeroSelect, className = "" }: HeroCardProps) => {
+const HeroCard = ({
+  hero,
+  onHeroSelect,
+  gloat = false,
+  className = "",
+}: HeroCardProps) => {
   const onCardClick = () => {
     if (onHeroSelect) {
       onHeroSelect(hero);
@@ -39,7 +45,7 @@ const HeroCard = ({ hero, onHeroSelect, className = "" }: HeroCardProps) => {
       />
 
       <img
-        src={hero.images.icon_hero_card}
+        src={gloat ? hero.images.hero_card_gloat : hero.images.icon_hero_card}
         alt={hero.name}
         className="relative z-10 h-full w-full object-cover"
       />

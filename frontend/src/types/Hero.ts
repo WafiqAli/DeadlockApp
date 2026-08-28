@@ -56,6 +56,7 @@ export interface HeroItems {
 
 export interface HeroImages {
   icon_hero_card: string;
+  hero_card_gloat: string;
   icon_hero_small: string;
   name_image: string;
 }
