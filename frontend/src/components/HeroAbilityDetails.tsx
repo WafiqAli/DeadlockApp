@@ -12,7 +12,7 @@ const HeroAbilityDetails = ({ heroAbility }: HeroAbilityDetailsProps) => {
   const safeDescription = DOMPurify.sanitize(heroAbility.description.desc);
 
   return (
-    <div className="bg-offwhite p-4 rounded-2xl border border-border">
+    <div className=" bg-offwhite p-4 rounded-2xl border border-border">
       <h1 className="heading-light text-xl">{heroAbility.name}</h1>
       <GoldHorizontalLine className="mt-2 mb-4" />
       <div
@@ -20,6 +20,7 @@ const HeroAbilityDetails = ({ heroAbility }: HeroAbilityDetailsProps) => {
           text-md
           text-primary-dark
           leading-relaxed
+          h-24 max-h-24 overflow-y-auto
           [&_svg]:inline
           [&_svg]:h-4
           [&_svg]:w-4

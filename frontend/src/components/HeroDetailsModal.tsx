@@ -72,7 +72,9 @@ const HeroDetailsModal = ({ hero, onClose }: HeroDetailsModalProps) => {
               );
             })}
           </div>
-          <h3 className="text-common-text">{hero.description.lore}</h3>
+          <p className="max-h-36 overflow-y-auto text-common-text">
+            {hero.description.lore}
+          </p>
         </div>
       </div>
       <div className="p-4">
