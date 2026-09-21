@@ -17,6 +17,7 @@ const HeroAbilityDetails = ({ heroAbility }: HeroAbilityDetailsProps) => {
       <GoldHorizontalLine className="mt-2 mb-4" />
       <div
         className="
+          ability-description
           text-md
           text-primary-dark
           leading-relaxed

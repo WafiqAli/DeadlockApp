@@ -29,3 +29,58 @@
     @apply font-display font-bold text-primary-dark uppercase
   }
 }
+
+
+
+/* Character ability description icon/symbols styling/colouring */
+.ability-description :is(.SpiritDPS, .SpiritDamage) {
+  color: #7c5cff; 
+} 
+.ability-description svg:has(+ :is(.SpiritDPS, .SpiritDamage)),
+.ability-description svg:has(+ :is(.SpiritDPS, .SpiritDamage)) * {
+  fill: #7c5cff;
+} 
+
+.ability-description .Pulling {
+  color: #0EA5E9 !important; 
+} 
+.ability-description svg:has(+ .Pulling),
+.ability-description svg:has(+ .Pulling) * {
+  fill: #0EA5E9;
+} 
+
+.ability-description .Stun {
+  color:  #EAB308 !important; 
+} 
+.ability-description svg:has(+ .Stun),
+.ability-description svg:has(+ .Stun) * {
+  fill:  #EAB308;
+} 
+
+.ability-description .MeleeDamage {
+  color:  #EC9719 !important; 
+} 
+.ability-description svg:has(+ .MeleeDamage),
+.ability-description svg:has(+ .MeleeDamage) * {
+  fill:  #EC9719;
+} 
+
+.ability-description :is(.WeaponDamage, .BonusWeaponDamage) {
+  color: #EC9719;
+}
+.ability-description svg:has(+ :is(.WeaponDamage, .BonusWeaponDamage)),
+.ability-description svg:has(+ :is(.WeaponDamage, .BonusWeaponDamage)) * {
+  fill: #EC9719;
+}
+
+.ability-description .PureDamage {
+  color: #EC9719;
+}
+.ability-description svg:has(+ .PureDamage),
+.ability-description svg:has(+ .PureDamage) * {
+  fill: #EC9719;
+}
+
+.ability-description img {
+  filter: brightness(15%);
+}
