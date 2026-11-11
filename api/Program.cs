@@ -8,6 +8,7 @@ var MyFrontendOrigins = "_myFrontendOrigins";
 // Add services to the container.
 builder.Services.AddScoped<IHeroesService, HeroesService>();
 builder.Services.AddScoped<IItemsService, ItemsService>();
+builder.Services.AddScoped<IPlayerService, PlayerService>();
 
 builder.Services.AddHttpClient<IDeadlockApiClient, DeadlockApiClient>(
     httpClient =>

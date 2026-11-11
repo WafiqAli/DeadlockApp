@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using api.DTOs;
+using Microsoft.AspNetCore.WebUtilities;
 
 namespace api.Clients
 {
@@ -49,6 +50,30 @@ namespace api.Clients
             );
 
             return itemsResponse ?? new List<ItemsDto>();
+        }
+
+        public async Task<List<SteamProfileDto>> SearchSteamProfilesAsync(string searchQuery, int? limit, CancellationToken cancellationToken = default)
+        {
+            const string endpoint = "/v1/players/steam-search";
+
+            var queryParameters = new Dictionary<string, string?>
+            {
+                ["search_query"] = searchQuery
+            };
+
+            if (limit.HasValue)
+            {
+                queryParameters["limit"] = limit.Value.ToString();
+            }
+
+            var requestUri = QueryHelpers.AddQueryString(endpoint, queryParameters);
+
+            var steamProfilesResponse = await _httpClient.GetFromJsonAsync<List<SteamProfileDto>>(
+                requestUri,
+                cancellationToken
+            );
+
+            return steamProfilesResponse ?? new List<SteamProfileDto>();
         }
 
     }

@@ -9,8 +9,8 @@ namespace api.Clients
     public interface IDeadlockApiClient
     {
         Task<List<HeroDto>> GetHeroesAsync(CancellationToken cancellationToken = default);
-
         Task<List<ItemsDto>> GetItemsAsync(CancellationToken cancellationToken = default);
         Task<List<HeroAbilityDto>> GetHeroesAbilitiesAsync(CancellationToken cancellationToken = default);
+        Task<List<SteamProfileDto>> SearchSteamProfilesAsync(string searchQuery, int? limit, CancellationToken cancellationToken = default);
     }
 }
