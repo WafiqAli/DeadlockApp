@@ -16,7 +16,7 @@ namespace api.Services
             _deadlockApiClient = deadlockApiClient;
         }
 
-        public async Task<IReadOnlyList<SteamProfileDto>> SearchSteamProfileAsync(string searchQuery, int? limit, CancellationToken cancellationToken)
+        public async Task<IReadOnlyList<SteamProfileDto>> SearchSteamProfilesAsync(string searchQuery, int? limit, CancellationToken cancellationToken)
         {
             var steamProfiles = await _deadlockApiClient.SearchSteamProfilesAsync(searchQuery, limit, cancellationToken);
 
