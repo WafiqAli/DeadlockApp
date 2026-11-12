@@ -7,7 +7,8 @@ namespace api.DTOs
 {
     public class PlayerProfileDto
     {
-        public SteamProfileDto SteamProfile { get; set; } = new();
+        public required SteamProfileDto SteamProfile { get; set; }
 
+        public required PlayerRankSummaryDto PlayerRankSummary { get; set; }
     }
 }

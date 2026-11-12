@@ -76,5 +76,29 @@ namespace api.Clients
             return steamProfilesResponse ?? new List<SteamProfileDto>();
         }
 
+        public async Task<PlayerRankDto?> GetPlayerRankAsync(uint accountId, CancellationToken cancellationToken)
+        {
+            string endpoint = $"/v1/players/{accountId}/rank";
+
+            var playerRankResponse = await _httpClient.GetFromJsonAsync<PlayerRankDto>(
+               endpoint,
+               cancellationToken
+           );
+
+            return playerRankResponse;
+        }
+
+        public async Task<RankDto?> GetRankAsync(int rankTier, CancellationToken cancellationToken)
+        {
+            string endpoint = $"/v1/assets/ranks/{rankTier}";
+
+            var rankResponse = await _httpClient.GetFromJsonAsync<RankDto>(
+               endpoint,
+               cancellationToken
+           );
+
+            return rankResponse;
+        }
+
     }
 }

@@ -9,5 +9,6 @@ namespace api.Services
     public interface IPlayerService
     {
         Task<IReadOnlyList<SteamProfileDto>> SearchSteamProfilesAsync(string searchQuery, int? limit, CancellationToken cancellationToken);
+        Task<PlayerProfileDto> GetPlayerProfile(uint accountId, CancellationToken cancellationToken);
     }
 }

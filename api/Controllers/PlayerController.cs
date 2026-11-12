@@ -19,12 +19,20 @@ namespace api.Controllers
             _playerService = playerService;
         }
 
-        [HttpGet]
+        [HttpGet("search")]
         public async Task<ActionResult<IReadOnlyList<SteamProfileDto>>> SearchSteamProfiles(string searchQuery, int? limit = 10, CancellationToken cancellationToken = default)
         {
             var steamProfiles = await _playerService.SearchSteamProfilesAsync(searchQuery, limit, cancellationToken);
 
             return Ok(steamProfiles);
+        }
+
+        [HttpGet("{accountId}")]
+        public async Task<ActionResult<PlayerProfileDto>> GetPlayer(uint accountId, CancellationToken cancellationToken)
+        {
+            var playerProfile = await _playerService.GetPlayerProfile(accountId, cancellationToken);
+
+            return Ok(playerProfile);
         }
     }
 }
