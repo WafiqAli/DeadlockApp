@@ -10,5 +10,7 @@ namespace api.DTOs
         public required SteamProfileDto SteamProfile { get; set; }
 
         public required PlayerRankSummaryDto PlayerRankSummary { get; set; }
+
+        public required PlayerStatsSummaryDto PlayerStatsSummary { get; set; }
     }
 }
