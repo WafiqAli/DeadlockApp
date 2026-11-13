@@ -100,5 +100,24 @@ namespace api.Clients
             return rankResponse;
         }
 
+        public async Task<List<PlayerHeroStatsDto>?> GetPlayerHeroStatsAsync(uint accountId, CancellationToken cancellationToken)
+        {
+            string endpoint = $"/v1/players/hero-stats";
+
+            var queryParameters = new Dictionary<string, string?>
+            {
+                ["account_ids"] = accountId.ToString()
+            };
+
+            var requestUri = QueryHelpers.AddQueryString(endpoint, queryParameters);
+
+            var playerHeroStatsResponse = await _httpClient.GetFromJsonAsync<List<PlayerHeroStatsDto>>(
+                requestUri,
+                cancellationToken
+            );
+
+            return playerHeroStatsResponse;
+        }
+
     }
 }

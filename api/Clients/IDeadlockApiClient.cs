@@ -14,5 +14,6 @@ namespace api.Clients
         Task<List<SteamProfileDto>> SearchSteamProfilesAsync(string searchQuery, int? limit, CancellationToken cancellationToken = default);
         Task<PlayerRankDto?> GetPlayerRankAsync(uint accountId, CancellationToken cancellationToken);
         Task<RankDto?> GetRankAsync(int rankTier, CancellationToken cancellationToken);
+        Task<List<PlayerHeroStatsDto>?> GetPlayerHeroStatsAsync(uint accountId, CancellationToken cancellationToken);
     }
 }
