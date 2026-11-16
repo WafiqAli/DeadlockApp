@@ -50,9 +50,10 @@ namespace api.Services
                 throw new InvalidOperationException("Rank asset could not be retrieved");
             }
 
-
+            //TODO: probably won't work for ranks without subrank e.g. eternus
             var rankImageUrl = playerRank.Subrank switch
             {
+                0 => rankAsset.images.large,
                 1 => rankAsset.images.subrank1,
                 2 => rankAsset.images.subrank2,
                 3 => rankAsset.images.subrank3,
@@ -80,7 +81,7 @@ namespace api.Services
             int totalWins = playerHeroStats.Sum(heroStat => heroStat.Wins);
             int totalAssists = playerHeroStats.Sum(heroStat => heroStat.Assists);
             int totalDeaths = playerHeroStats.Sum(heroStats => heroStats.Deaths);
-
+            int totalKills = playerHeroStats.Sum(heroStat => heroStat.Kills);
             int totalLosses = totalMatchesPlayed - totalWins;
 
             double winRate = Math.Round((double)totalWins / totalMatchesPlayed * 100, 1);
@@ -88,7 +89,7 @@ namespace api.Services
             double averageKills = Math.Round((double)playerHeroStats.Sum(heroStats => heroStats.Kills) / totalMatchesPlayed, 1);
             double averageDeaths = Math.Round((double)playerHeroStats.Sum(heroStats => heroStats.Deaths) / totalMatchesPlayed, 1);
             double averageAssists = Math.Round((double)playerHeroStats.Sum(heroStats => heroStats.Assists) / totalMatchesPlayed, 1);
-            double kdaRatio = Math.Round((double)(totalWins + totalAssists) / totalDeaths, 2);
+            double kdaRatio = Math.Round((double)(totalKills + totalAssists) / totalDeaths, 2);
 
 
 

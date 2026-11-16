@@ -21,5 +21,6 @@ namespace api.DTOs
         public string? subrank4 { get; set; }
         public string? subrank5 { get; set; }
         public string? subrank6 { get; set; }
+        public string? large { get; set; }
     }
 }
