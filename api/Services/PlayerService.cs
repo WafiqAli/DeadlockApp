@@ -50,19 +50,27 @@ namespace api.Services
                 throw new InvalidOperationException("Rank asset could not be retrieved");
             }
 
-            //TODO: probably won't work for ranks without subrank e.g. eternus
-            var rankImageUrl = playerRank.Subrank switch
+
+            var rankImageUrl = "";
+
+            if (playerRank.Rank == 0 && rankAsset.images.large != null)
             {
-                0 => rankAsset.images.large,
-                1 => rankAsset.images.subrank1,
-                2 => rankAsset.images.subrank2,
-                3 => rankAsset.images.subrank3,
-                4 => rankAsset.images.subrank4,
-                5 => rankAsset.images.subrank5,
-                6 => rankAsset.images.subrank6,
-                _ => throw new InvalidOperationException(
-                    $"Unexpected player subrank: {playerRank.Subrank}"),
-            };
+                rankImageUrl = rankAsset.images.large;
+            }
+            else
+            {
+                rankImageUrl = playerRank.Subrank switch
+                {
+                    1 => rankAsset.images.subrank1,
+                    2 => rankAsset.images.subrank2,
+                    3 => rankAsset.images.subrank3,
+                    4 => rankAsset.images.subrank4,
+                    5 => rankAsset.images.subrank5,
+                    6 => rankAsset.images.subrank6,
+                    _ => throw new InvalidOperationException(
+                        $"Unexpected player subrank: {playerRank.Subrank}"),
+                };
+            }
 
             if (rankImageUrl == null)
             {

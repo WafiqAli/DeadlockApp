@@ -8,6 +8,6 @@ namespace api.DTOs
     public class PlayerRankDto
     {
         public int Rank { get; set; }
-        public int Subrank { get; set; }
+        public int? Subrank { get; set; }
     }
 }
